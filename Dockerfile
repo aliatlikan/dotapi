@@ -11,5 +11,5 @@ RUN dotnet publish --no-restore -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:5.0
 WORKDIR /app
-COPY --from-build-env /app/out .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "dotapi.dll"]
