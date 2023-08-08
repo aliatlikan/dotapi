@@ -1,4 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
+
+USER root
+
 WORKDIR /app
 
 COPY *.csproj .
